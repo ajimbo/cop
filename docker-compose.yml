@@ -1,0 +1,18 @@
+version: "3"
+services:
+  cop:
+    image: cop
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+    container_name: nifi
+    environment:
+      - ADMIN_PASS=admin
+    ports:
+      - 8443:8443
+# open more ports for listeners or outbound ports
+#      - 8080:8080
+    restart: always
+
+
+#$ docker service create --name cop2 --secret cop_pass -e ADMIN_PASS=/run/secrets/mysql_root_password mysql:8.0

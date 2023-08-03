@@ -7,7 +7,7 @@ services:
 #      dockerfile: Dockerfile
     container_name: nifi
     environment:
-      - ADMIN_PASS=admin
+      - admin_pass=admin
     ports:
       - 8443:8443
 # open more ports for listeners or outbound ports
@@ -15,4 +15,4 @@ services:
     restart: always
 
 
-#$ docker service create --name cop2 --secret cop_pass -e ADMIN_PASS=/run/secrets/mysql_root_password mysql:8.0
+#$ docker service create --name cop --secret cop_pass -e ADMIN_PASS=/run/secrets/mysql_root_password mysql:8.0
